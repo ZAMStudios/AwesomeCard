@@ -40,7 +40,7 @@ class CardFrontLayout {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           SizedBox(
-            height: 8,
+            height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
