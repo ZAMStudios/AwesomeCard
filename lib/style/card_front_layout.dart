@@ -23,7 +23,7 @@ class CardFrontLayout {
     this.cardHolderName = '',
     this.textExpDate = 'Exp. Date',
     this.textExpiry = 'MM/YY',
-    this.textName = 'Card Holder',
+    this.textName = '',
     required this.mask,
     this.cardTypeIcon,
     this.cardWidth = 0,
@@ -55,6 +55,19 @@ class CardFrontLayout {
                         color: textColor,
                         fontSize: 17,
                         fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
+              Expanded(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Image.asset(
+                    'images/chip.png',
+                    fit: BoxFit.fitHeight,
+                    width: 30.0,
+                    height: 30.0,
+                    color: textColor,
+                    package: 'awesome_card',
                   ),
                 ),
               ),

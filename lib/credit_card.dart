@@ -51,7 +51,7 @@ class CreditCard extends StatefulWidget {
     this.height,
     this.textExpDate = 'Exp. Date',
     this.textExpiry = 'MM/YY',
-    this.textName = 'Card Holder',
+    this.textName = '',
     this.mask,
     this.horizontalMargin = 20,
     this.isContactless = true,
