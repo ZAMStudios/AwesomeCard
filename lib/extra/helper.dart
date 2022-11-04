@@ -66,6 +66,13 @@ Widget getCardTypeIcon({CardType? cardType, String? cardNumber}) {
         height: 50,
         package: 'awesome_card',
       );
+    case CardType.union:
+      return Image.asset(
+        'images/card_provider/union.png',
+        width: 50,
+        height: 50,
+        package: 'awesome_card',
+      );
     default:
       return Container();
   }
@@ -111,6 +118,8 @@ String getCardTypeMask({CardType? cardType, String? cardNumber}) {
 
     case CardType.elo:
       return 'XXXX XXXX XXXX XXXX';
+    case CardType.union:
+      return 'XXXX XXXX XXXX XXXX';
     default:
       return 'XXXX XXXX XXXX XXXX';
   }
@@ -127,6 +136,7 @@ CardType getCardType(String cardNumber) {
   final rMaestro = RegExp(r'^(5[06789]|6)[0-9]{0,}$');
   final rRupay = RegExp(r'^(6522|6521|60)[0-9]{0,}$');
   final rVisa = RegExp(r'^4[0-9]{0,}$');
+  final rUnion = RegExp(r'^(62[0-9]{14,17})$');
   final rElo = RegExp(
       r'^(4011(78|79)|43(1274|8935)|45(1416|7393|763(1|2))|50(4175|6699|67[0-7][0-9]|9000)|50(9[0-9][0-9][0-9])|627780|63(6297|6368)|650(03([^4])|04([0-9])|05(0|1)|05([7-9])|06([0-9])|07([0-9])|08([0-9])|4([0-3][0-9]|8[5-9]|9[0-9])|5([0-9][0-9]|3[0-8])|9([0-6][0-9]|7[0-8])|7([0-2][0-9])|541|700|720|727|901)|65165([2-9])|6516([6-7][0-9])|65500([0-9])|6550([0-5][0-9])|655021|65505([6-7])|6516([8-9][0-9])|65170([0-4]))');
 
@@ -160,6 +170,8 @@ CardType getCardType(String cardNumber) {
     return CardType.elo;
   } else if (rMaestro.hasMatch(cardNumber)) {
     return CardType.maestro;
+  }else if (rUnion.hasMatch(cardNumber)) {
+    return CardType.union;
   }
 
   return CardType.other;

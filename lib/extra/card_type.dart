@@ -8,5 +8,6 @@ enum CardType {
   rupay,
   visa,
   elo,
+  union,
   other
 }
