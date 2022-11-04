@@ -107,7 +107,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
   final TextEditingController _cardHolderNameController =
       TextEditingController();
   final TextEditingController _cvvCodeController =
-      MaskedTextController(mask: '0000');
+      MaskedTextController(mask: '000');
 
  // FocusNode cvvFocusNode = FocusNode();
   FocusNode expiryDateNode = FocusNode();
@@ -240,7 +240,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
                           color: widget.textColor,
                         ),
                         decoration: widget.expiryDateDecoration,
-                        keyboardType: TextInputType.number,
+                        keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
                         textInputAction: TextInputAction.next,
                         autofillHints: const <String>[
                           AutofillHints.creditCardExpirationDate
@@ -297,7 +297,7 @@ class _CreditCardFormState extends State<CreditCardForm> {
                         color: widget.textColor,
                       ),
                       decoration: widget.cvvCodeDecoration,
-                      keyboardType: TextInputType.number,
+                      keyboardType: TextInputType.numberWithOptions(signed: true, decimal: true),
                       textInputAction: widget.isHolderNameVisible
                           ? TextInputAction.next
                           : TextInputAction.done,
