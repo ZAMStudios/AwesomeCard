@@ -133,7 +133,7 @@ CardType getCardType(String cardNumber) {
   final rJcb = RegExp(r'^(?:2131|1800|35)[0-9]{0,}$');
   final rMasterCard =
       RegExp(r'^(5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[01]|2720)[0-9]{0,}$');
-  final rMaestro = RegExp(r'^(5[06789]|6)[0-9]{0,}$');
+  final rMaestro = RegExp(r'^(5018|5020|5038|5893|6304|6759|6761|6762|6763)[0-9]{8,15}$');
   final rRupay = RegExp(r'^(6522|6521|60)[0-9]{0,}$');
   final rVisa = RegExp(r'^4[0-9]{0,}$');
   final rUnion = RegExp(r'^(62[0-9]{14,17})$');
